@@ -6,7 +6,6 @@ import Navbar from './components/layout/Navbar';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from './components/routing/PrivateRoute';
-
 import { Provider } from 'react-redux';
 import store from './store';
 import Alert from './components/layout/Alert';

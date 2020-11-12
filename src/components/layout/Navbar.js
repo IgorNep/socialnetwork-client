@@ -24,7 +24,10 @@ const Navbar = ({ logout, auth }) => {
   const authLinks = (
     <Fragment>
       <li>
-        <p>Hello, {user && user.name}</p>
+        <Link to="/dashboard">
+          <i className="fa fa-user"></i>{' '}
+          <span className="hide-sm">Dashboard</span>
+        </Link>
       </li>
       <li>
         <a onClick={logout} href="#!">
