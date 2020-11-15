@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import Spinner from '../layout/Spinner';
 import PostItem from './PostItem';
+import PostForm from './PostForm';
 import PropTypes from 'prop-types';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
@@ -17,7 +18,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
       <p className="lead">
         <i className="fa fa-user"></i> Welcome to the community
       </p>
-      {/*PostForm*/}
+      <PostForm />
       <div className="posts">
         {posts.map((post) => (
           <PostItem key={post._id} post={post} />
@@ -29,7 +30,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
 
 Posts.propTypes = {
   post: PropTypes.object.isRequired,
-  getPosts: PropTypes.object.isRequired,
+  getPosts: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
