@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getGithubRepos } from '../../actions/profile';
+import Spinner from '../layout/Spinner';
 
 const ProfileGithub = ({
   username,
@@ -15,7 +16,7 @@ const ProfileGithub = ({
   }, [getGithubRepos, username]);
   return (
     <div className="profile-github">
-      {repos.length > 0 && (
+      {repos && repos.length > 0 && (
         <Fragment>
           <h2 className="text-primary my-1">
             <i className="fa fa-github"></i> Github Repos
